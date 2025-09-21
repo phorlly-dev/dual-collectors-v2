@@ -3,14 +3,8 @@ import { emitEvent } from "../hooks/remote";
 
 const Footer = ({ isFooter, isMobile }) => {
     React.useEffect(() => {}, []);
-
-    const handlePress = (key) => {
-        emitEvent(key, true);
-    };
-
-    const handleRelease = (key) => {
-        emitEvent(key, false);
-    };
+    const handlePress = (key) => emitEvent(key, true);
+    const handleRelease = (key) => emitEvent(key, false);
 
     return (
         isFooter &&

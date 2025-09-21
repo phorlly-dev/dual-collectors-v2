@@ -2,7 +2,7 @@ import { exponentFromValue } from "../../hooks/function";
 import { emitEvent, onEvent } from "../../hooks/remote";
 import { audio, height, image, over, start, width } from "../consts";
 import spawnBoxes from "../utils/box-factory";
-import { actions } from "../utils/controller";
+import { updateActions } from "../utils/controller";
 import { bombEffect, powerEffect, scoreEffect } from "../utils/effect";
 import { playSound, setPower, setScore, textBoxes } from "../utils/helper";
 import { makeAnimations, makePlayer } from "../utils/object";
@@ -39,14 +39,13 @@ class Game extends Phaser.Scene {
         emitEvent("footer", true);
 
         // ---  background ---
-        this.add.image(width / 2, height / 2, image.key.bg).setAlpha(0.2);
+        this.add.image(width / 2, height / 2, image.key.bg).setAlpha(0.4);
 
         // --- Reset game state ---
         this.restartGame();
 
         // --- Player, animations, UI ---
         this.player = makePlayer(this);
-
         makeAnimations(this);
         textPause(this);
 
@@ -102,7 +101,7 @@ class Game extends Phaser.Scene {
         if (this.isPaused) return;
 
         // --- Player movement ---
-        actions(this);
+        updateActions(this);
 
         // --- Update box text positions + cleanup ---
         textBoxes(this);

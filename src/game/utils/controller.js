@@ -2,7 +2,7 @@ import { height } from "../consts";
 import { playIfNotPlaying, stopIfPlaying } from "./helper";
 
 const Controllers = {
-    actions(scene) {
+    updateActions(scene) {
         // Left movement
         if (scene.cursors.left.isDown || scene.as.A.isDown || scene.isLeft)
             moveLeft(scene);
@@ -14,11 +14,11 @@ const Controllers = {
         )
             moveRight(scene);
         // Idle
-        else stop(scene);
+        else stopAction(scene);
 
         // Jump
         scene.cursors.space.isDown || scene.isJump
-            ? jump(scene)
+            ? moveUp(scene)
             : fallback(scene);
     },
     moveLeft(scene) {
@@ -33,13 +33,13 @@ const Controllers = {
 
         playIfNotPlaying(scene.walk);
     },
-    jump(scene) {
+    moveUp(scene) {
         scene.player.setVelocityY(-330);
     },
     fallback(scene) {
         scene.player.setVelocityY(height);
     },
-    stop(scene) {
+    stopAction(scene) {
         scene.player.setVelocityX(0);
         scene.player.anims.play("turn");
 
@@ -47,5 +47,11 @@ const Controllers = {
     },
 };
 
-export const { actions, moveLeft, moveRight, jump, fallback, stop } =
-    Controllers;
+export const {
+    updateActions,
+    moveLeft,
+    moveRight,
+    moveUp,
+    fallback,
+    stopAction,
+} = Controllers;

@@ -10,7 +10,7 @@ import { height, width } from "./consts";
 // https://docs.phaser.io/api-documentation/typedef/types-core#gameconfig
 const config = {
     type: Phaser.AUTO,
-    backgroundColor: "#34495e",
+    // backgroundColor: "#34495e",
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
