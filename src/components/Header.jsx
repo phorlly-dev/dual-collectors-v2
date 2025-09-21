@@ -40,7 +40,7 @@ const Header = ({ player, onLogout, isHeader, isMobile }) => {
                 <header className="card-header bg-opacity-75 bg-gradient rounded-4 p-3">
                     <div className="d-flex flex-column flex-md-row justify-content-md-between gap-3">
                         {/* Row 1: Stats */}
-                        <section className="d-flex justify-content-center justify-content-md-start align-items-center gap-2">
+                        <section className="d-flex justify-content-center justify-content-md-start align-items-center gap-1">
                             <div className="text-box text-light d-flex align-items-center fs-6 fs-md-5">
                                 <i className="fa fa-bolt text-info me-1"></i>
                                 Power:{" "}
@@ -49,8 +49,11 @@ const Header = ({ player, onLogout, isHeader, isMobile }) => {
                                 </span>
                             </div>
 
-                            <div className="text-box text-light text-capitalize fs-6 fs-md-5">
-                                <i className="fa fa-user me-1"></i> {player}
+                            <div className="text-box text-light fs-6 fs-md-5">
+                                <i className="fa fa-user"></i>
+                                <span className="text-info text-capitalize ms-1">
+                                    {player}
+                                </span>
                             </div>
 
                             <div className="text-box text-light d-flex align-items-center fs-6 fs-md-5">
