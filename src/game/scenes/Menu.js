@@ -1,4 +1,4 @@
-import { isMobile } from "../../hooks/function";
+import { toMobile } from "../../hooks/function";
 import {
     audio,
     height,
@@ -64,7 +64,7 @@ class Menu extends Phaser.Scene {
     }
 
     update() {
-        this.label.setText(isMobile() ? tap_start : pres_start);
+        this.label.setText(toMobile() ? tap_start : pres_start);
     }
 }
 

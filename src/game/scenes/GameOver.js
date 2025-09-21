@@ -1,4 +1,4 @@
-import { isMobile } from "../../hooks/function";
+import { toMobile } from "../../hooks/function";
 import { emitEvent } from "../../hooks/remote";
 import {
     audio,
@@ -78,7 +78,7 @@ class GameOver extends Phaser.Scene {
     }
 
     update() {
-        this.label.setText(isMobile() ? tap_restart : press_restart);
+        this.label.setText(toMobile() ? tap_restart : press_restart);
     }
 }
 

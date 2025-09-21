@@ -1,5 +1,6 @@
 import * as React from "react";
 import { offEvents, onEvents } from "../hooks/remote";
+import { toMobile } from "../hooks/function";
 
 // Lazy load the Phaser game
 const PhaserGame = React.lazy(() => import("./PhaserGame"));
@@ -25,7 +26,7 @@ const Content = ({ player, onLogout }) => {
 
     // Detect screen size
     React.useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        const handleResize = () => setIsMobile(toMobile());
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);

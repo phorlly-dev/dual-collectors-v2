@@ -7,12 +7,13 @@ const Functions = {
     powersOf2(value) {
         return Math.pow(2, value);
     },
-    isMobile() {
+    toMobile() {
         return (
             /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-            window.innerWidth < 768
+            window.innerWidth <= 768 ||
+            window.innerWidth <= 820
         );
     },
 };
 
-export const { exponentFromValue, powersOf2, isMobile } = Functions;
+export const { exponentFromValue, powersOf2, toMobile } = Functions;
