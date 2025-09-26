@@ -20,9 +20,7 @@ const Auth = ({ onAuth }) => {
                 style={{ maxWidth: "400px", width: "100%" }}
             >
                 {/* Title */}
-                <h2 className="fw-bold text-info mb-2">
-                    Connection-Balls Game
-                </h2>
+                <h3 className="fw-bold text-info mb-2">Power & Score Game</h3>
                 <p className="text-light mb-4">
                     Enter your name to start playing!
                 </p>

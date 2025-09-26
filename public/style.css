@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, Arial, sans-serif;
     color: #ecf0f1;
+    background: #292c31ff;
 }
 
 /* Game canvas */
@@ -76,8 +77,8 @@ canvas {
    BUTTONS
 ======================= */
 .control-btn {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
